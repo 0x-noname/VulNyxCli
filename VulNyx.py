@@ -35,7 +35,7 @@ def colorize_header(header):
     return "\033[1;37m{}\033[0m".format(header)
 
 def show_machines(level=None):
-    url = "https://vulnyx.github.io/"
+    url = "https://vulnyx.com/"
     result = requests.get(url)
     content = result.text
     soup = BeautifulSoup(content, 'lxml')
@@ -76,7 +76,7 @@ def main():
         print("""
     Tool created for the VulNyx community!
 
-    VulNyx Web:   https://vulnyx.github.io/
+    VulNyx Web:   https://vulnyx.com/
     VulNyx Tool:  https://github.com/0x-noname/VulNyxCli
         """)
     elif any([args.easy, args.medium, args.hard, args.all]):
