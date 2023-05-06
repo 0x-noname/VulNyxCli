@@ -30,3 +30,4 @@ To view all level machines
 ```bash
 python3 VulNyx.py --all
 ```
+Tool tested on windows and gnu-linux systems ;)
