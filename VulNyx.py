@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from prettytable import PrettyTable
 from bs4 import BeautifulSoup
 import requests, os
@@ -12,8 +13,10 @@ def c_screen_windows():
 def c_screen():
     if os.name == 'posix':
         c_screen_unix()
+
     elif os.name == 'nt':
         c_screen_windows()
+        
 c_screen()
 
 color_header = '\033[1;37m'
