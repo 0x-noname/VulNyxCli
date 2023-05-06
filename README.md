@@ -1,5 +1,5 @@
 # VulNyxCli
- **VulNyxCli is a simple tool to view all machines on the ``vulnyx.github.io`` platform.**
+ **VulNyxCli is a simple tool to view all machines on the ``vulnyx.com`` platform.**
 
 ![](/vm-cli.png)
 
