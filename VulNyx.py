@@ -11,6 +11,7 @@ def c_screen_windows():
     os.system('cls')
 
 def c_screen():
+    
     if os.name == 'posix':
         c_screen_unix()
 
