@@ -5,7 +5,7 @@
 
 #### Download
 ```
-git clone
+git clone https://github.com/0x-noname/VulNyxCli.git
 cd VulNyxCli
 chmod +x VulNyx.py
 ```
