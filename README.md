@@ -4,19 +4,19 @@
 ![](/vm-cli.png)
 
 #### Download
-```
+```bash
 git clone https://github.com/0x-noname/VulNyxCli.git
 cd VulNyxCli
 chmod +x VulNyx.py
 ```
 
 if you have any error you can follow the steps below
-```
+```bash
 pip install lxml
 ```
 
 Install requirements 
-```
+```bash
 pip install -r requirements.txt
 ```
 
