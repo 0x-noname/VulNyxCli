@@ -18,14 +18,31 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-#### Use
+**``Tool tested on Windows and GNU-linux systems``**
+
+#### Use GNU-Linux
 
 To view help options
 ```bash
-python3 VulNyx.py --help or -h
+python3 VulNyx.py --help
+or
+./VulNyx.py --help
 ```
 To view all level machines
 ```bash
 python3 VulNyx.py --all
+or
+./VulNyx.py --all
 ```
-Tool tested on windows and gnu-linux systems ;)
+
+#### Use Windows
+
+To view help options
+```bash
+python VulNyx.py --help
+```
+To view all level machines
+```bash
+python VulNyx.py --all
+```
+
