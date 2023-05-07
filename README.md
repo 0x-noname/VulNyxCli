@@ -1,26 +1,22 @@
 # VulNyxCli
 ![](/vm-cli.png)
 VulNyxCli is a simple tool to view all machines on the vulnyx.com platform
-#### Download
+
+### **``Download``**
 ```bash
 git clone https://github.com/0x-noname/VulNyxCli.git
 cd VulNyxCli
 chmod +x VulNyx.py
 ```
-
 if you have any error you can follow the steps below
 ```bash
 pip install lxml
 ```
-
 Install requirements 
 ```bash
 pip install -r requirements.txt
 ```
-
-### **``Tool tested on Windows and GNU-linux systems``**
-
-#### Use GNU-Linux
+#### **``Use GNU-Linux``**
 
 To view help options
 ```bash
