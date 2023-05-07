@@ -18,7 +18,7 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-**``Tool tested on Windows and GNU-linux systems``**
+### **``Tool tested on Windows and GNU-linux systems``**
 
 #### Use GNU-Linux
 
