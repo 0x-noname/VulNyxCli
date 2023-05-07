@@ -11,7 +11,7 @@ def c_screen_windows():
     os.system('cls')
 
 def c_screen():
-    
+
     if os.name == 'posix':
         c_screen_unix()
 
@@ -63,7 +63,7 @@ def show_machines(level=None):
                 f"\033[1;37m{vname}\033[0m",
                 colorize_level(machine_level),
                 f"\033[1;37m{creator}\033[0m",
-                f"\033[1;30m{download_link}\033[0m"])
+                f"\033[0;37m{download_link}\033[0m"])
 
     print(table)
 
