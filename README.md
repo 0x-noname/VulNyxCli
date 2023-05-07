@@ -1,6 +1,6 @@
 # VulNyxCli
 ![](/vm-cli.png)
-VulNyxCli is a simple tool to view all machines on the vulnyx.com platform.
+VulNyxCli is a simple tool to view all machines on the **vulnyx.com** platform.
 
 ## **``Download``**
 ```bash
