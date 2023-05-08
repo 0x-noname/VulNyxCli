@@ -41,4 +41,4 @@ python VulNyx.py --help
 ```bash
 python VulNyx.py --all
 ```
-**``![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F0x-noname%2FVulNyxCli&countColor=%23bd4658)``**
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2F0x-noname%2FVulNyxCli&countColor=%23bd4658)
