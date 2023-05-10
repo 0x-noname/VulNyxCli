@@ -51,7 +51,7 @@ def show_machines(level=None):
         "\033[1;31mCreator\033[0m",
         "\033[1;31mDownload\033[0m"]
     for row in machine_rows:
-        vname = row.find('td', class_="id-vmname").find('span').get_text()
+        vname = row.find('td', class_="vm-name").find('span').get_text()
         machine_level = row.find('td', class_="level").find('span').get_text()
         if level is None or level.lower() == machine_level.lower():
             creator_box = row.find('td', class_="creator")
