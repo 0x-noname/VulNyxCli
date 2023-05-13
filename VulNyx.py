@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 from prettytable import PrettyTable
 from bs4 import BeautifulSoup
 import requests, os
@@ -20,7 +21,6 @@ def c_screen():
 
 c_screen()
 
-#
 white = '\033[1;37m'
 red = "\033[1;31m"
 reset = '\033[0m'
