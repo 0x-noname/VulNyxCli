@@ -2,15 +2,15 @@
 
 from prettytable import PrettyTable
 from bs4 import BeautifulSoup
-import requests, os
+import requests
+import os
 import argparse
 
-os.system('cls' if os.name=='nt' else 'clear')
+os.system('cls' if os.name == 'nt' else 'clear')
 
 white = '\033[1;37m'
 red = "\033[1;31m"
 reset = '\033[0m'
-
 
 print(white + """
                          _    __      __                    ________    ____
@@ -21,16 +21,19 @@ print(white + """
                                           /____/                            
 """ + reset)
 print(white + "                                         Author" + reset + "  :", red + "0x-noname" + reset)
-print(white + "                                         Version" + reset + " :" , red +  "1.1\n" + reset)
+print(white + "                                         Version" + reset + " :", red + "1.2\n" + reset)
+
 
 def colorize_level(level):
     colors = {'easy': '\033[1;32m', 'medium': '\033[1;33m', 'hard': '\033[1;31m'}
     return f"{colors.get(level.lower(), '')}{level}\033[0m"
 
+
 def colorize_header(header):
     return "\033[1;37m{}\033[0m".format(header)
 
-def show_machines(level=None, show_writeups=False, show_download=True):
+
+def show_machines(level=None, show_writeups=False, show_download=True, machine_name=None):
     url = "https://vulnyx.com/"
     result = requests.get(url)
     content = result.text
@@ -57,6 +60,8 @@ def show_machines(level=None, show_writeups=False, show_download=True):
             creator_link = creator_box.find('a')
             creator_span = creator_box.find('span')
             creator = creator_link.get_text() if creator_link else creator_span.get_text() if creator_span else "Unknown"
+            if machine_name and machine_name.lower() != vname.lower():
+                continue
             if show_writeups:
                 writeups_column = row.find('td', class_="writeups")
                 writeup_links = writeups_column.find_all('a')
@@ -75,25 +80,27 @@ def show_machines(level=None, show_writeups=False, show_download=True):
                     f"\033[1;37m{creator}\033[0m",
                     f"\033[0;37m{download_link}\033[0m"])
     print(table)
-    
+
+
 def main():
-    parser = argparse.ArgumentParser(usage='%(prog)s [--help] [--easy] [--medium] [--hard] [--all] [--write] [--info]')
+    parser = argparse.ArgumentParser(usage='%(prog)s [--help] [--easy] [--medium] [--hard] [--all] [--write] [--write_machine NAME] [--info]')
     parser.add_argument('--easy', action='store_true', help='show only easy machines')
     parser.add_argument('--medium', action='store_true', help='show only medium machines')
     parser.add_argument('--hard', action='store_true', help='show only hard machines')
     parser.add_argument('--all', action='store_true', help='show all machines')
-    parser.add_argument('--write', action='store_true', help='show writeups')
+    parser.add_argument('--write', action='store_true', help='show all writeups')
+    parser.add_argument('--write_machine', metavar='NAME', help='show writeups for a specific machine')
     parser.add_argument('--info', action='store_true', help='show tool information')
     args = parser.parse_args()
-
 
     if args.info:
         print("                        Tool created for the VulNyx community!\n")
         print(white + "                        VulNyx Web" + reset + "  :", red + "https://vulnyx.com/" + reset)
         print(white + "                        VulNyx Tool" + reset + " :", red + "https://github.com/0x-noname/VulNyxCli\n\n" + reset)
-       
     elif args.write:
         show_machines(show_writeups=True)
+    elif args.write_machine:
+        show_machines(show_writeups=True, machine_name=args.write_machine)
     elif any([args.easy, args.medium, args.hard, args.all]):
         if args.easy:
             show_machines(level='easy', show_download=not args.all)
