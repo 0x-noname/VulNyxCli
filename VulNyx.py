@@ -5,21 +5,7 @@ from bs4 import BeautifulSoup
 import requests, os
 import argparse
 
-def c_screen_unix():
-    os.system('clear')
-
-def c_screen_windows():
-    os.system('cls')
-
-def c_screen():
-
-    if os.name == 'posix':
-        c_screen_unix()
-
-    elif os.name == 'nt':
-        c_screen_windows()
-
-c_screen()
+os.system('cls' if os.name=='nt' else 'clear')
 
 white = '\033[1;37m'
 red = "\033[1;31m"
@@ -103,7 +89,7 @@ def main():
 
     if args.info:
         print("                        Tool created for the VulNyx community!\n")
-        print(white + "                        VulNyx Web" + reset + "  :", red + "https://vulnyx.github.io/" + reset)
+        print(white + "                        VulNyx Web" + reset + "  :", red + "https://vulnyx.com/" + reset)
         print(white + "                        VulNyx Tool" + reset + " :", red + "https://github.com/0x-noname/VulNyxCli\n\n" + reset)
        
     elif args.write:
